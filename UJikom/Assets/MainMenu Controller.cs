@@ -19,11 +19,13 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayGame(){
         SceneManager.LoadScene("GamePlay");
+
         StopBGM();
 
     }
 
     public void ExitGame(){
+
         Application.Quit();
     }
 
@@ -35,6 +37,8 @@ public class MainMenuController : MonoBehaviour
         audioSource.Stop();
 
     }
+
+    
 
 
 }
