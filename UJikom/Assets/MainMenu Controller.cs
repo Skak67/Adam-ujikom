@@ -9,6 +9,7 @@ public class MainMenuController : MonoBehaviour
     public AudioSource audioSource;
     public Button PlayButton;
     public Button ExitButton;
+    public AudioSource UIButton;
        void Start()
     {
         PlayButton.onClick.AddListener(PlayGame);
@@ -19,12 +20,16 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayGame(){
         SceneManager.LoadScene("GamePlay");
+        PlaySFX();
+      
 
         StopBGM();
+        
 
     }
 
     public void ExitGame(){
+        PlaySFX();
 
         Application.Quit();
     }
@@ -33,9 +38,13 @@ public class MainMenuController : MonoBehaviour
         audioSource.Play();
     }
 
+    public void PlaySFX(){
+        UIButton.Play();
+    }
+
+
     public void StopBGM(){
         audioSource.Stop();
-
     }
 
     
